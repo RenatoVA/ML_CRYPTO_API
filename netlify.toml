@@ -1,5 +1,5 @@
 [build]
-command = "pip install pipenv && pipenv install && pipenv run python main.py"
+command = "pip install pipenv && pipenv install && pipenv run python functions/main.py"
 functions = "functions"
 
 [[redirects]]
