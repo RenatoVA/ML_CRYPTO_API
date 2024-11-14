@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
-from app.models import Model
+from models import Model
 app = FastAPI()
 
 model = Model()
@@ -62,3 +62,11 @@ def get_top_5_tokens():
         return top_5_per_category
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.get('/')
+def index():
+    return {"message": "API de predicción de tokens"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
