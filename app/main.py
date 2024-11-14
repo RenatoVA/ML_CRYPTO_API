@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
 from app.models import Model
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -63,3 +64,4 @@ def get_top_5_tokens():
         return top_5_per_category
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+handler = Mangum(app)
