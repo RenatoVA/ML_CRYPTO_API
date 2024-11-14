@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
-from models import Model
+from app.models import Model
 app = FastAPI()
 
 model = Model()
