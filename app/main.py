@@ -1,3 +1,5 @@
+import sys
+sys.path.append('.')
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict
@@ -66,3 +68,6 @@ def get_top_5_tokens():
 @app.get('/')
 def index():
     return {"message": "API de predicción de tokens"}
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app)
