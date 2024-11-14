@@ -113,7 +113,3 @@ class Model:
             price_changes.append((token, price_change_percentage))
         top_5_tokens = sorted(price_changes, key=lambda x: x[1], reverse=True)[:5]
         return top_5_tokens
-if __name__ == "__main__":
-    model = Model()
-    model.eval()
-    print(model.top_5_tokens_by_category('gaming'))
